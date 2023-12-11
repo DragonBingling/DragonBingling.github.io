@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>论文笔记-Experiments with Interactive Fault LocalizationUsing Simulated and Real Users - DragonBingling</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  <meta name="keywords" content="oh">
+  <meta name="description" content=" 该论文intro章节后为一个新章节MOTIVATIN...">
+  <meta name="author" content="冰凌">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: false,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">论文笔记-Experiments with Interactive Fault LocalizationUsing Simulated and Real Users</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">论文笔记-Experiments with Interactive Fault LocalizationUsing Simulated and Real Users</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 11, 2023</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>3967</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <p> 该论文intro章节后为一个新章节<strong>MOTIVATING EXAMPLE</strong>，介绍一下一个启发本实验的案例。</p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>Fault localization is considered a difficult and time consuming activity. However, tool support for automated fault localization is still limited because state-of-the-art algorithms often fail to provide efficient help to the user. They usually offer a ranked list of suspicious code elements, but the fault is not guaranteed to be found among the highest ranks. In Spectrum-Based Fault Localization (SBFL) – which uses code coverage information of test cases and their execution outcomes to calculate the ranks –, the developer has to investigate several locations before finding the faulty code element. Yet, all the knowledge she a priori has or acquires during this process is not reused by the SBFL tool. We propose an approach in which the developer interacts with the SBFL algorithm by giving feedback on the elements of the prioritized list. We exploit contextual knowledge of the user about the next item in the ranked list (e. g., a statement), with which larger code entities (e. g., a whole function) can be repositioned in their suspiciousness. First, we evaluated the approach using simulated users incorporating two types of imperfections, their knowledge and confidence levels. On SIR and Defects4J, results showed notable improvements in fault localization efficiency, even with strong user imperfections. We then empirically evaluated the effectiveness of the approach with real users, which also showed promising results.</p>
+<p>故障定位被认为是一项困难且耗时的活动。然而，自动故障定位的工具支持仍然有限，因为最先进的算法通常不能为用户提供有效的帮助。它们通常提供一个排名列表，显示可疑的代码元素，但不能保证故障一定在最高排名中找到。在基于光谱的故障定位（SBFL）中，该方法使用测试用例的代码覆盖信息和它们的执行结果来计算排名。开发人员必须在找到有问题的代码元素之前调查多个位置。然而，在这个过程中，开发人员在此期间拥有或获取的所有知识都没有被SBFL工具重复利用。</p>
+<p>我们提出了一种方法，其中开发人员与SBFL算法进行交互，提供对优先级列表中元素的反馈。我们利用用户对排名列表中下一个项目（例如，一个语句）的上下文知识，从而可以重新确定较大的代码实体（例如，整个函数）的可疑性。首先，我们使用模拟用户评估了这种方法，考虑了两种类型的不完善性，即他们的知识水平和信心水平。在SIR和Defects4J上，结果显示即使在用户不完美的情况下，故障定位的效率也有显著提高。然后，我们通过真实用户对这种方法的有效性进行了经验性评估，也取得了有希望的结果。</p>
+<h3 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">In our approach, we call this information <span class="hljs-keyword">the</span> contextual<br>knowledge, which can be fed back <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> iFL engine. More<br>precisely, we define <span class="hljs-keyword">the</span> context <span class="hljs-keyword">of</span> <span class="hljs-keyword">an</span> investigated code<br><span class="hljs-keyword">element</span> <span class="hljs-keyword">as</span> <span class="hljs-keyword">the</span> other elements <span class="hljs-keyword">of</span> its enclosing higher level<br>syntactic entity. For example, <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-keyword">case</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">a</span> statement, its<br>context are all other statements belonging <span class="hljs-built_in">to</span> its function. A<br>context <span class="hljs-keyword">of</span> <span class="hljs-keyword">a</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">is</span> <span class="hljs-title">its</span> <span class="hljs-title">enclosing</span> <span class="hljs-title">class</span>, <span class="hljs-title">and</span> <span class="hljs-title">so</span> <span class="hljs-title">on</span>.</span><br></code></pre></td></tr></table></figure>
+
+<p>（再研究研究这个）</p>
+<p>示例图：</p>
+<p><img    class="lazyload" data-original="/./MyImg/image-20231207214810130.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231207214810130</span></p>
+<p>图1展示了我们方法的概念概述。该过程从基于像Tarantula这样的一些传统SBFL方法计算的初始排名开始。然后，元素从列表的开头开始向用户展示，并且iFL引擎等待用户的反馈。用户调查建议的元素并给出以下答案之一：</p>
+<p><strong>1）找到了故障，</strong></p>
+<p><strong>2）元素没有故障，其上下文也没有故障，</strong></p>
+<p><strong>3）元素没有故障，但故障在上下文中的某处，或者</strong></p>
+<p><strong>4）不知道。</strong></p>
+<p>根据用户的反馈，iFL引擎执行以下操作。在情况（1）下，流程终止，而在情况（4）下，它将按照通常的方式继续下一个可疑元素（这意味着在最坏的情况下，当开发人员没有背景知识时，该方法会回退到纯SBFL方法）。在其余两种情况下，iFL引擎会对可疑性分数进行调整，重新计算排名，并在下一次迭代中向用户展示新列表中的下一个元素。</p>
+<p>可以采用不同的策略来进行这些调整，例如对得分进行比例减少或增加，这些得分对上下文和系统的其他部分不同等等。目前，我们采用以下方法：在情况（2）下，整个上下文（即函数）得分为0，而在情况（3）下，除了上下文之外的所有内容都被降为0。</p>
+<p><strong>灵感</strong>：用大模型的话可以细化这些分数的比例。不用完全降为0，这样会更加准确。</p>
+<h3 id="EVALUATION-GOALS"><a href="#EVALUATION-GOALS" class="headerlink" title="EVALUATION GOALS"></a>EVALUATION GOALS</h3><p>评价第一部分，对于<strong>模拟用户</strong>，与传统的非交互SBFL方法相比，iFL在需要检测的本地化有效性方面有多大的提高？</p>
+<p>RQ1：iFL对来自SIR存储库中的人工故障有什么改进？</p>
+<p>RQ2：iFL对缺陷4J存储库的真实故障有什么改进？</p>
+<p>RQ3：iFL对用户的不完美有多敏感？</p>
+<p>评价第二部分，考虑到<strong>真实用户</strong>的实际故障查找任务，与没有访问iFL的控制组相比，在开发环境中访问iFL实现的用户是否能够找到更多或更快的错误。</p>
+<p>RQ4：用户比没有访问该方法的用户能发现更多的bug，这是真的吗？</p>
+<p>RQ5：用户可以比没有访问该方法的用户更快地发现错误，这是真的吗？</p>
+<p>RQ6：真实用户如何主观评价iFL方法及其在开发环境中的实现？</p>
+<p>A. 实验设置</p>
+<p>数据集：人工故障Sir与真实故障D4j</p>
+<p>怀疑度公式：Tarantula</p>
+<p>模拟用户组件的工作原理是，它从第一个排序列表中获取元素，将它们的上下文与已知错误的上下文进行比较，并生成相应的答案，直到到达错误元素。</p>
+<p>B. 评价方法</p>
+<p>绝对开销E和相对开销E‘</p>
+<p><img    class="lazyload" data-original="/./MyImg/image-20231208102614138.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231208102614138</span></p>
+<p>N是代码元素的数量，</p>
+<p>i∈{1，…，N} </p>
+<p>si是第i个代码元素的怀疑度分数</p>
+<p>f是错误代码元素的索引。</p>
+<p>为了将iFL方法与传统的SBFL方法进行比较， 我们将计算这两种方法的费用指标，然后将它们与传统的SBFL相对改进进行比较。由于在每次方法迭代中都会在一步中决定一个代码块，所以我们将每次迭代都视为相当于计算费用的一个等级位置。然后将为每个缺陷计算改进的量，并生成适当的平均值。（？？？）</p>
+<p>最近的用户研究报告指出，在放弃之前，开发人员通常只会调查本地化方法提供的推荐列表中的前5个或最多前10个元素[5]，[9]。因此，任何超出这些阈值的改进排名位置可能会变得不太有用，无论它们能够实现多少相对改进。</p>
+<p>因此，我们定义了**”启用改进 <em>enabling improvement</em>“**的概念，即传统的FL算法将故障方法排在大于10（或5）的位置，但iFL方法在不到10（或5）步内达到了故障方法的改进。</p>
+<p>将用3个案例来表达启用改进</p>
+<p>• (10, ∞] → (5, 10] 基本的FL分数大于10，而iFL在5到10步内找到了故障。</p>
+<p> • (10, ∞] → [1, 5] 基本的FL分数大于10，而iFL在5步内找到了故障。 </p>
+<p>• (5, 10] → [1, 5] 基本的FL分数在5到10之间，而iFL在5步内找到了故障。</p>
+<p>C.<em>Results for Seeded Faults</em>已搜索故障的结果</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>冰凌</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2023/12/11/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Experiments%20with%20Interactive%20Fault%20LocalizationUsing%20Simulated%20and%20Real%20Users/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;11&#x2F;%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Experiments%20with%20Interactive%20Fault%20LocalizationUsing%20Simulated%20and%20Real%20Users&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;11&#x2F;%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Experiments%20with%20Interactive%20Fault%20LocalizationUsing%20Simulated%20and%20Real%20Users&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2023/12/06/%E8%AE%BA%E6%96%87%E6%80%9D%E8%B7%AF/">论文写作思路总结<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EVALUATION-GOALS"><span class="toc-text">EVALUATION GOALS</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
